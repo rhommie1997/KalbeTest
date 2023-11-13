@@ -1,0 +1,45 @@
+﻿@using KalbeTest.ViewModels;
+@model MoleculesSaveViewModel;
+
+<form asp-action="Save">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-center">Edit Person</h1>
+        <hr />
+        <div class="row">
+            <input type="hidden" name="Type" value="Edit" />
+            <input asp-for="id" type="hidden" />
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size: 20px;">Molecules Name</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="MoleculesName" class="form-control" />
+                <span asp-validation-for="MoleculesName" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size: 20px;">Molecules Description</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="MolDescription" class="form-control" />
+                <span asp-validation-for="MolDescription" class="text-danger"></span>
+            </div>
+            <div class="col-2">
+                <label class="control-label pt-2" style="font-size: 20px;">Is Active ?</label>
+            </div>
+            <div class="col-10 pb-3">
+                <input asp-for="isActive" type="checkbox" />
+            </div>
+            <div class="col-5 offset-2">
+                <a asp-action="Index" class="btn-primary btn form-control">Back to list</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Create" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
